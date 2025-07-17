@@ -405,43 +405,40 @@ const LandingPage = () => {
   {services.map((service, index) => (
     <Grid item xs={12} sm={6} md={4} key={index}>
       <Fade in={true} timeout={800} style={{ transitionDelay: `${index * 200}ms` }}>
-<Card
-  elevation={6}
-  sx={{
-    borderRadius: 3,
-    height: 150,
-    width: { xs: '100%', sm: '90%', md: '100%' }, // responsive width
-    maxWidth: 300,
-    margin: '0 auto',
-    backgroundColor: '#f5f9f7',
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-    cursor: 'default',
-    '&:hover, &:focus-visible': {
-      transform: 'scale(1.05)',
-      boxShadow:
-        '0 6px 16px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.05)',
-      cursor: 'pointer',
-    },
-    '&:active': {
-      transform: 'scale(1.02)',
-      boxShadow:
-        '0 8px 20px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1)',
-    },
-  }}
+       <Box
+  display="flex"
+  flexWrap="wrap"
+  justifyContent="center"
+  gap={2}
 >
-  {service.icon}
-  <CardContent sx={{ paddingBottom: '8px' }}>
-    <Typography variant="h6" sx={{ color: '#1e5f4b', fontWeight: 600 }}>
-      {service.title}
-    </Typography>
-  </CardContent>
-</Card>
+  {services.map((service, index) => (
+    <Card
+      key={index}
+      sx={{
+        width: { xs: '90%', sm: '45%', md: '30%' }, // responsive fixed widths
+        height: 140,
+        textAlign: 'center',
+        borderRadius: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        '&:hover': {
+          transform: 'scale(1.03)',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+        },
+      }}
+    >
+      {service.icon}
+      <CardContent>
+        <Typography variant="h6" sx={{ color: '#1e5f4b' }}>
+          {service.title}
+        </Typography>
+      </CardContent>
+    </Card>
+  ))}
+</Box>
 
     </Fade>
 </Grid>
