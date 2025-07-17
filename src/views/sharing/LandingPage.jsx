@@ -405,40 +405,44 @@ const LandingPage = () => {
   {services.map((service, index) => (
     <Grid item xs={12} sm={6} md={4} key={index}>
       <Fade in={true} timeout={800} style={{ transitionDelay: `${index * 200}ms` }}>
-        <Card
-        elevation={6}
-        sx={{
-            borderRadius: 0,
-            height: 120,
-            width: '100%',
-            textAlign: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-            cursor: 'default', // default cursor normally
-            '&:hover, &:focus-visible': {
-            transform: 'scale(1.05)',
-            boxShadow:
-                'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',
-            cursor: 'pointer', // pointer cursor on hover/focus
-            },
-            '&:active': {
-            transform: 'scale(1.05)',
-            boxShadow:
-                'rgba(50, 50, 93, 0.35) 0px 8px 16px -2px, rgba(0, 0, 0, 0.4) 0px 4px 10px -3px',
-            cursor: 'pointer', // pointer cursor on active (touch)
-            },
-        }}
-        >
-        {service.icon}
-        <CardContent>
-        <Typography variant="h6" sx={{ color: '#1e5f4b' }}>
-            {service.title}
-        </Typography>
-        </CardContent>
-    </Card>
+<Card
+  elevation={6}
+  sx={{
+    borderRadius: 3,
+    height: 150,
+    width: { xs: '100%', sm: '90%', md: '100%' }, // responsive width
+    maxWidth: 300,
+    margin: '0 auto',
+    backgroundColor: '#f5f9f7',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    cursor: 'default',
+    '&:hover, &:focus-visible': {
+      transform: 'scale(1.05)',
+      boxShadow:
+        '0 6px 16px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.05)',
+      cursor: 'pointer',
+    },
+    '&:active': {
+      transform: 'scale(1.02)',
+      boxShadow:
+        '0 8px 20px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1)',
+    },
+  }}
+>
+  {service.icon}
+  <CardContent sx={{ paddingBottom: '8px' }}>
+    <Typography variant="h6" sx={{ color: '#1e5f4b', fontWeight: 600 }}>
+      {service.title}
+    </Typography>
+  </CardContent>
+</Card>
+
     </Fade>
 </Grid>
   ))}
