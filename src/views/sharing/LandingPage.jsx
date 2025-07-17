@@ -317,7 +317,7 @@ const LandingPage = () => {
                 backgroundColor: '#fff',
                 color: '#1e5f4b',
                 fontWeight: 'bold',
-                borderRadius: '4px',
+                borderRadius: '1px',
                 px: 4,
               }}
             >
@@ -332,7 +332,7 @@ const LandingPage = () => {
                 borderColor: '#fff',
                 color: '#fff',
                 fontWeight: 'bold',
-                borderRadius: '4px',
+                borderRadius: '1px',
                 px: 4,
               }}
             >
