@@ -321,7 +321,7 @@ const LandingPage = () => {
                 px: 4,
               }}
             >
-              Anza  Mafunzo
+              Anza Mafunzo
             </Button>
             <Button
               variant="outlined"
