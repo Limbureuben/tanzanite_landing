@@ -284,7 +284,7 @@ const LandingPage = () => {
         }}
       >
         <Typography
-          variant="h3"
+          variant="h4"
           fontWeight="bold"
           component={motion.h1}
           initial={{ scale: 0.8, opacity: 0 }}
